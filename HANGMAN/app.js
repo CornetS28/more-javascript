@@ -10,8 +10,8 @@ remainingGuessesOutput.textContent = game1.statusMessage;
 
 window.addEventListener ('keypress', e => {
   if (game1.status === 'playing') {
-    const guess = String.fromCharCode (e.charCode);
-    game1.makeGuess (guess);
+    const guess = String.fromCharCode(e.charCode);
+    game1.makeGuess(guess);
     guessOutput.textContent = game1.puzzle;
     remainingGuessesOutput.textContent = game1.statusMessage;
   }
@@ -19,14 +19,25 @@ window.addEventListener ('keypress', e => {
 });
 
 //callback function
-getPuzzle((error, puzzle) => {
+getPuzzle('4', (error, puzzle) => {
   if (error) {
     console.log(`error: ${error}`)
   } else {
     console.log(puzzle)
   }
   
-})
+});
+
+getCountry("US", (error, country) => {
+  if (error) {
+   console,log(error)
+  } else {
+    console.log(`Country Name: ${country.name}`)
+  }
+});
+
+
+
 
 
 
