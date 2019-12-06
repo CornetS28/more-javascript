@@ -24,11 +24,17 @@ getPuzzle('2').then((puzzle) => {
   console.log(`Error: ${err}`)
 })
 
-// getCountry('HT').then((country) => {
+// getCountryOld('HT').then((country) => {
 //   console.log(`Country Name: ${country.name}`)
 // }, (error) => {
 //     console.log(`Error: ${error}`)
 // });
+
+getCountry('HT').then((country) => {
+  console.log(`Country Name: ${country.name}`)
+}).catch((error) => {
+  console.log(`Error: ${error}`)
+})
 
 // Fetch
 // fetch("http://puzzle.mead.io/puzzle", {})
