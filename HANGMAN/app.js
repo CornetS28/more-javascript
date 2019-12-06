@@ -18,22 +18,17 @@ window.addEventListener ('keypress', e => {
   return;
 });
 
-//callback function
-getPuzzle('4', (error, puzzle) => {
-  if (error) {
-    console.log(`error: ${error}`)
-  } else {
-    console.log(puzzle)
-  }
-  
+
+getPuzzle('2').then((puzzle) => {
+  console.log(puzzle)
+}, (err) => {
+  console.log(`Error: ${err}`)
 });
 
-getCountry("US", (error, country) => {
-  if (error) {
-   console,log(error)
-  } else {
-    console.log(`Country Name: ${country.name}`)
-  }
+getCountry('HT').then((country) => {
+  console.log(`Country Name: ${country.name}`)
+}, (error) => {
+    console.log(`Error: ${error}`)
 });
 
 
@@ -41,20 +36,4 @@ getCountry("US", (error, country) => {
 
 
 
-// const countryCode = 'HT';
-// const countryRequest = new XMLHttpRequest ();
 
-// countryRequest.addEventListener ('readystatechange', e => {
-//   if (e.target.readyState === 4 && e.target.status === 200) {
-//     const data = JSON.parse (e.target.responseText);
-//     const country = data.find (country => country.alpha2Code === countryCode);
-//     console.log (country.name);
-//     // const countryFilter = data.filter (country => country.currencies);
-//     // console.log (countryFilter);
-//   } else if (e.target.readyState === 4) {
-//     console.log ('Unable to get the data');
-//   }
-// });
-
-// countryRequest.open ('GET', 'http://restcountries.eu/rest/v2/all');
-// countryRequest.send ();
